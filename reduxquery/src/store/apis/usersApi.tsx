@@ -19,6 +19,7 @@ const usersApi = createApi({
   endpoints(builder) {
     return {
       fetchUsers: builder.query({
+        providesTags: ["User"],
         query: () => {
           return {
             url: "/users",
