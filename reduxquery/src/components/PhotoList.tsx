@@ -19,11 +19,11 @@ type Photo = {
 };
 
 const AlbumList: React.FC<Props> = ({ album }) => {
-  const { data, isError, isFetching } = useFetchPhotosQuery(album.id);
+  const { data, isError, isFetching } = useFetchPhotosQuery(album);
   const [addPhoto, results] = useAddPhotoMutation();
 
   const handlePhotoAdd = () => {
-    addPhoto(album.id);
+    addPhoto(album);
   };
 
   let content;
@@ -51,7 +51,7 @@ const AlbumList: React.FC<Props> = ({ album }) => {
           )}
         </Button>
       </div>
-      <div>{content}</div>
+      <div className="photoImage">{content}</div>
     </div>
   );
 };

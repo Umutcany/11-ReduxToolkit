@@ -10,3 +10,28 @@
   background-color: lightgrey;
   border-radius: 30px;
 }
+
+.photoImage {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  gap:10px;
+}
+
+.photoContainer{
+  position: relative; 
+}
+
+.trashCan{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+  font-size: 30px;
+  
+}
+
+
