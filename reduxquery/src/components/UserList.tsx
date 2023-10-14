@@ -1,4 +1,3 @@
-import React from "react";
 import { useAddUserMutation, useFetchUsersQuery } from "../store";
 import Skeleton from "@mui/material/Skeleton";
 import UserListItem from "./UserListItem";
@@ -8,11 +7,12 @@ import CircularProgress from "@mui/material/CircularProgress";
 const UserList = () => {
   const { isError, isFetching, data } = useFetchUsersQuery();
   const [addUser, results] = useAddUserMutation();
-  debugger;
 
   const handleUserAdd = () => {
     addUser();
   };
+
+  const userList = (data || []) as Array<{ name: string; id: number }>;
 
   let content;
   if (isFetching) {
@@ -22,7 +22,7 @@ const UserList = () => {
   } else if (isError) {
     content = <div style={{ color: "red" }}>Hata var</div>;
   } else {
-    content = data.map((user: string, index: number) => {
+    content = userList.map((user, index: number) => {
       return <UserListItem key={index} user={user} />;
     });
   }

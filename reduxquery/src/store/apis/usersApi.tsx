@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { faker } from "@faker-js/faker";
 
 const pause = (duration) => {
   return new Promise((resolve) => {
@@ -28,24 +29,27 @@ const usersApi = createApi({
         },
       }),
       addUser: builder.mutation({
+        invalidatesTags: () => {
+          return [{ type: "User" }];
+        },
         query: () => {
           return {
             url: "/users",
             method: "POST",
             body: {
-              name: "Umut",
+              name: faker.person.fullName(),
             },
           };
         },
       }),
       removeUser: builder.mutation({
+        invalidatesTags: () => {
+          return [{ type: "User" }];
+        },
         query: (user) => {
           return {
-            url: `/users/${user}`, // Fixed a missing comma here
+            url: `/users/${user.id}`,
             method: "DELETE",
-            body: {
-              name: "Umut",
-            },
           };
         },
       }),

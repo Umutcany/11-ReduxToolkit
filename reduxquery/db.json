@@ -1,12 +1,43 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Julia"
+      "id": 3,
+      "name": "Umut Can"
     },
     {
-      "id": 3,
-      "name": "Umut Can Yılmaz"
+      "name": "Jenna Wunsch I",
+      "id": 4
+    },
+    {
+      "name": "Frankie Hilll",
+      "id": 5
+    }
+  ],
+  "albums": [
+    {
+      "userId": 3,
+      "title": "Eskişehir",
+      "id": 15
+    },
+    {
+      "userId": 3,
+      "title": "Awesome Frozen Hat",
+      "id": 16
+    },
+    {
+      "userId": 4,
+      "title": "Practical Bronze Pants",
+      "id": 17
+    }
+  ],
+  "photos": [
+    {
+      "url": "https://loremflickr.com/150/150/abstract?lock=1887425345355776",
+      "id": 1
+    },
+    {
+      "url": "https://loremflickr.com/150/150/abstract?lock=2127315288981504",
+      "id": 2
     }
   ]
 }
